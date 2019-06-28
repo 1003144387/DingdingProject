@@ -1,0 +1,117 @@
+<view class="component_produce_container">
+  <form onSubmit="onSubmitTap" class="form-content">
+    <view class="form_item" >
+      <text class="item_label">
+        选择产品
+      </text>
+      <view class="item_content">
+      <picker onChange="bindPickerChange" value="{{index}}" name="product_id" range="{{productList}}" range-key="name">
+        <text class="picker_value" >
+          {{productList[index].name}}
+        </text>
+      </picker>
+      </view>
+    </view>
+    <view class="form_item">
+      <text class="item_label">
+        扫描部件
+      </text>
+      <view class="item_content">
+        <scan onScan="onScanPartsTap" name="code"></scan>
+      </view>
+    </view>
+     <view a:if="{{partsCodes.length>0}}" class="list_container">
+      <view class="form_item">
+        <text class="item_label">部件信息</text>
+        <view class="item_content">
+          <view class="{{isPartsFold?'iconfont icon-xiangshangshouqi':'iconfont icon-xiangxiazhankai'}}" onTap="partsFoldTap"></view>
+        </view>
+      </view>
+      <list className="form_list" a:if="{{isPartsFold}}">
+        <block a:for="{{partsItems}}" a:for-item="item" a:for-index="index">
+          <list-item className="list_item"
+            key="item-{{index}}" 
+          >
+            <view class="list_item_label"> {{item.name}}</view>
+            <view class="list_item_content">{{item.code}}</view>
+            <view class="list_item_cancel iconfont icon-cuowuguanbiquxiao-xianxingyuankuang" data-index="{{index}}" onTap="cancelPartsItemTap"></view>
+          </list-item>
+        </block>
+      </list>
+    </view>
+    <view class="form_item">
+      <text class="item_label">
+        扫描组件
+      </text>
+      <view class="item_content">
+        <scan onScan="onComponentScanTap" name="code"></scan>
+      </view>
+    </view>
+     <view a:if="{{componentCodes.length>0}}" class="list_container">
+      <view class="form_item">
+        <text class="item_label">组件信息</text>
+        <view class="item_content">
+          <view class="{{isComponentFold?'iconfont icon-xiangshangshouqi':'iconfont icon-xiangxiazhankai'}}" onTap="componentFoldTap"></view>
+        </view>
+      </view>
+      <list className="form_list" a:if="{{isComponentFold}}">
+        <block a:for="{{componentItems}}" a:for-item="item" a:for-index="index">
+          <list-item className="list_item"
+            key="item-{{index}}" 
+          >
+            <view class="list_item_label"> {{item.name}}</view>
+            <view class="list_item_content">{{item.code}}</view>
+            <view class="list_item_cancel iconfont icon-cuowuguanbiquxiao-xianxingyuankuang" data-index="{{index}}" onTap="cancelComponentItemTap"></view>
+          </list-item>
+        </block>
+      </list>
+    </view>
+    <view class="form_item">
+      <text class="item_label">
+        扫描产品
+      </text>
+      <view class="item_content">
+        <scan onScan="onProductScanTap" name="code"></scan>
+      </view>
+    </view>
+    <view a:if="{{productId}}" class="list_container">
+      <view class="form_item">
+        <text class="item_label">产品信息</text>
+        <view class="item_content">
+          <view class="{{isProductFold?'iconfont icon-xiangshangshouqi':'iconfont icon-xiangxiazhankai'}}" onTap="productFoldTap"></view>
+        </view>
+      </view>
+      <list className="form_list" a:if="{{isProductFold}}">
+        <list-item className="list_item"
+          >
+            <view class="list_item_label">产品编号</view>
+            <view class="list_item_content">{{productId}}</view>
+          </list-item>
+      </list>
+    </view>
+    <view class="form_item">
+      <text class="item_label">备注信息</text>
+      <view class="item_content">
+        <input class="item_input" type="text"  name="remark"/>
+      </view>
+    </view>
+    <view class="form_item">
+      <text class="item_label">图片</text>
+    </view>
+    <view class="image_container" name="image">
+      <view class="image_preview_container" a:for="{{imagePathList}}" a:for-item="item" a:key="image" a:for-index="imageIndex">
+        <image class="image_item" src="{{item}}" 
+        onLongTap="previewImage"
+        mode="aspectFit" data-index="{{imageIndex}}" onTap="imageTap"></image>
+      </view>
+      <view class="upload_lebal" onTap="chooseImageTap">+</view>
+    </view>
+    <view class="form_item">
+      <button 
+        loading="{{loading}}"
+        class="form_btn"
+        type="primary"
+        formType="submit">提交</button>
+    </view>
+  </form>
+</view>

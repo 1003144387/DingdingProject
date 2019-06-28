@@ -1,0 +1,7 @@
+.scan-container{
+    width:44rpx;
+    display:inline-block;
+}
+.scan-content{
+  width:44rpx;
+}

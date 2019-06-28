@@ -1,0 +1,6 @@
+{
+    "defaultTitle":"仓库管理",
+    "usingComponents":{
+        "grid":"mini-ddui/es/grid/index"
+      }
+}

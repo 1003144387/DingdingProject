@@ -1,0 +1,6 @@
+{
+  "defaultTitle": "检验车间",
+   "usingComponents":{
+    "grid":"mini-ddui/es/grid/index"
+  }
+}

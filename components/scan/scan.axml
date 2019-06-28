@@ -1,0 +1,3 @@
+<view class="scan-container">
+ <view class="scan-content iconfont icon-saomiao" onTap="onTapScan"></view>
+</view>

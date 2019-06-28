@@ -1,0 +1,67 @@
+<view class="soft_install_container">
+  <form onSubmit="onSubmitTap" class="form-content">
+    <view class="form_item">
+      <text class="item_label">
+        扫描部件
+      </text>
+      <view class="item_content">
+        <scan onScan="onScanTap" name="code"></scan>
+      </view>
+    </view>
+    <view a:if="{{goodsCodes.length>0}}" class="list_container">
+      <view class="form_item">
+        <text class="item_label">部件信息</text>
+        <view class="item_content">
+          <view class="{{isFold?'iconfont icon-xiangshangshouqi':'iconfont icon-xiangxiazhankai'}}" onTap="foldTap"></view>
+        </view>
+      </view>
+      <list className="form_list" a:if="{{isFold}}">
+      <block a:for="{{goodsItems}}" a:for-item="item" a:for-index="index">
+        <list-item className="list_item"
+          key="item-{{index}}" 
+        >
+          <view class="list_item_label"> {{item.name}}</view>
+          <view class="list_item_content">{{item.code}}</view>
+          <view class="list_item_cancel iconfont icon-cuowuguanbiquxiao-xianxingyuankuang" data-index="{{index}}" onTap="cancelItemTap"></view>
+        </list-item>
+      </block>
+    </list>
+    </view>
+    <view class="form_item">
+      <text class="item_label">部件数量</text>
+      <view class="item_content">
+        <input class="item_input" type="number" disabled value="{{number}}" name="number"/>
+      </view>
+    </view>
+    <view class="form_item">
+      <text class="item_label">{{status?"合格":"不合格"}}</text>
+      <view class="item_content">
+        <switch checked="{{status}}" onChange="statusOnChange" name="status"></switch>
+      </view>
+    </view>
+    <view class="form_item">
+      <text class="item_label">备注信息</text>
+      <view class="item_content">
+        <input class="item_input" type="text"  name="remark"/>
+      </view>
+    </view>
+    <view class="form_item">
+      <text class="item_label">图片</text>
+    </view>
+    <view class="image_container" name="image">
+      <view class="image_preview_container" a:for="{{imagePathList}}" a:for-item="item" a:key="image" a:for-index="imageIndex">
+        <image class="image_item" src="{{item}}" 
+        onLongTap="previewImage"
+        mode="aspectFit" data-index="{{imageIndex}}" onTap="imageTap"></image>
+      </view>
+      <view class="upload_lebal" onTap="chooseImageTap">+</view>
+    </view>
+    <view class="form_item">
+      <button 
+        loading="{{loading}}"
+        class="form_btn"
+        type="primary"
+        formType="submit">提交</button>
+    </view>
+  </form>
+</view>

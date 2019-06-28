@@ -1,0 +1,8 @@
+{
+    "defaultTitle": "部件软件灌装和设备校准",
+    "usingComponents":{
+      "scan":"/components/scan/scan",
+      "list":"mini-ddui/es/list/index",
+      "list-item":"mini-ddui/es/list/list-item/index"
+    }
+ }

@@ -1,0 +1,51 @@
+{
+  "pages": [
+    "pages/main/index/index",
+    "pages/more/index/index",
+    "pages/main/inspection/index/index",
+    "pages/main/produce/index/index",
+    "pages/main/purchase/index/index",
+    "pages/main/stock/index/index",
+    "pages/main/inspection/componentInspectionApprove/index/index",
+    "pages/main/inspection/partsInspection/index/index",
+    "pages/main/stock/stockIn/stockIn",
+    "pages/main/stock/stockOut/stockOut",
+    "pages/main/produce/defendApprove/defendApprove",
+    "pages/main/produce/softInstallApprove/softInstallApprove",
+    "pages/main/produce/functionInspectionApprove/functionInspectionApprove",
+    "pages/main/produce/componentProduce/componentProduce",
+    "pages/main/produce/componentProduceApprove/componentProduceApprove",
+    "pages/main/produce/productProduce/productProduce",
+    "pages/main/produce/productProduceApprove/productProduceApprove",
+    "pages/main/inspection/productInspection/productInspection",
+    "pages/main/stock/stockInParts/stockInParts",
+    "pages/main/stock/stockInComponent/stockInComponent",
+    "pages/main/stock/stockInProduct/stockInProduct",
+    "pages/main/stock/stockOutParts/stockOutParts",
+    "pages/main/stock/stockOutProduct/stockOutProduct",
+    "pages/main/stock/stockOutComponent/stockOutComponent"
+  ],
+  "window": {
+    "titleBarColor": "#1890ff",
+    "defaultTitle": "CK-MES"
+  },
+  "tabBar": {
+    "backgroundColor": "#f7f7f7",
+    "textColor": "#1d1d1d",
+    "selectedColor": "#1890ff",
+    "items": [
+      {
+        "pagePath": "pages/main/index/index",
+        "name": "主页",
+        "activeIcon": "/images/icon/tabBar/home-active.png",
+        "icon": "/images/icon/tabBar/home.png"
+      },
+      {
+        "pagePath": "pages/more/index/index",
+        "name": "更多",
+        "activeIcon": "/images/icon/tabBar/more-active.png",
+        "icon": "/images/icon/tabBar/more.png"
+      }
+    ]
+  }
+}

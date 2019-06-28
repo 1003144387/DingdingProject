@@ -1,0 +1,8 @@
+{
+    "defaultTitle": "部件功能检测",
+    "usingComponents":{
+      "scan":"/components/scan/scan",
+      "list":"mini-ddui/es/list/index",
+      "list-item":"mini-ddui/es/list/list-item/index"
+    }
+ }

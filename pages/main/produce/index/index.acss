@@ -1,0 +1,6 @@
+.produce-container{
+    width:100%
+}
+.am-grid-3{
+  padding:0px;
+}

@@ -1,0 +1,3 @@
+<view class="stock-container">
+  <grid columnNum="{{3}}"  onGridItemClick ="onGridItemTap" list="{{pageList}}"></grid>
+</view>

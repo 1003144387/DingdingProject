@@ -1,0 +1,6 @@
+{
+    "defaultTitle": "组装车间",
+     "usingComponents":{
+      "grid":"mini-ddui/es/grid/index"
+    }
+  }

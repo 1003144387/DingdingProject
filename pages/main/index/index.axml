@@ -1,0 +1,5 @@
+<view class="main-container">
+  <view class="grid-container">
+    <grid columnNum="{{3}}" class="grid-content"  onGridItemClick ="onGridItemTap" list="{{pageList}}"></grid>
+  </view>
+</view>
